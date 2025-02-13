@@ -6,8 +6,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "sanity dev",
-    "start": "sanity start",
-    "build": "sanity build",
+    "start": "concurrently \"sanity start\" \"node server.js\"",
+    "build": "npx sanity build",
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy"
   },
@@ -28,12 +28,14 @@
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
+    "@sanity/cli": "^3.75.0",
     "@sanity/eslint-config-studio": "^5.0.1",
     "@types/body-parser": "^1.19.5",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/nodemailer": "^6.4.17",
     "@types/react": "^18.0.25",
+    "concurrently": "^9.1.2",
     "eslint": "^9.9.0",
     "prettier": "^3.0.2",
     "typescript": "^5.1.6"
