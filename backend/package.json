@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "sanity dev",
     "start": "concurrently \"sanity start\" \"node server.js\"",
-    "build": "npx sanity build",
+    "build": "npm install && npx sanity build",
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy"
   },
