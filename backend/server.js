@@ -37,6 +37,9 @@ const transporter = createTransport({
     },
 });
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the backend!');
+  });
 app.post('/send-email', (req, res) => {
     const { name, email, message } = req.body;
 
