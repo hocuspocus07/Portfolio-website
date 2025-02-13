@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://deployed-frontend-url.com'
+    'https://sajjad1337.netlify.app'
 ];
 
 app.use(cors({
