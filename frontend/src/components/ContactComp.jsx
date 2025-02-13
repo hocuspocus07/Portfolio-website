@@ -17,7 +17,7 @@ export default function ContactComp() {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:5000/send-email', {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/send-email`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
