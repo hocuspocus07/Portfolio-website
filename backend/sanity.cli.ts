@@ -4,8 +4,8 @@ import dotenv from "dotenv"
 dotenv.config()
 export default defineCliConfig({
   api: {
-    projectId: process.env.PROJECT_ID,
-    dataset: process.env.DATASET
+    projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
+    dataset: process.env.SANITY_STUDIO_DATASET!,
   },
   autoUpdates: true,
 })

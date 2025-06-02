@@ -1,10 +1,10 @@
 import express from 'express';
-import bodyParser from 'body-parser'; // Default import
+import bodyParser from 'body-parser'; 
 import { createTransport } from 'nodemailer';
 import cors from 'cors';
 import dotenv from "dotenv"
 
-dotenv.config()
+dotenv.config({ path: '.env' })
 const app = express();
 const PORT = process.env.PORT || 5000;
 

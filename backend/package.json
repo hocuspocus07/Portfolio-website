@@ -15,6 +15,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity/client": "^7.4.0",
     "@sanity/vision": "^3.75.0",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
@@ -22,13 +23,15 @@
     "express": "^4.21.2",
     "nodemailer": "^6.10.0",
     "nodemon": "^3.1.9",
+    "process": "^0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sanity": "^3.75.0",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.8",
+    "vite": "^6.3.5"
   },
   "devDependencies": {
-    "@sanity/cli": "^3.75.0",
+    "@sanity/cli": "^3.90.0",
     "@sanity/eslint-config-studio": "^5.0.1",
     "@types/body-parser": "^1.19.5",
     "@types/cors": "^2.8.17",
