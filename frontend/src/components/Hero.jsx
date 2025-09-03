@@ -8,7 +8,7 @@ function Hero() {
                 <div className="md:mr-10">
                     <img
                         className="rounded-lg min-w-[100px] w-80 h-auto md:w-auto md:h-96"
-                        src="me.jpeg"
+                        src="pfp.png"
                         alt="image of myself"
                     />
                 </div>
