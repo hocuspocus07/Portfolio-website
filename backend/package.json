@@ -22,7 +22,6 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "nodemailer": "^6.10.0",
-    "nodemon": "^3.1.9",
     "process": "^0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -40,6 +39,7 @@
     "@types/react": "^18.0.25",
     "concurrently": "^9.1.2",
     "eslint": "^9.9.0",
+    "nodemon": "^3.1.10",
     "prettier": "^3.0.2",
     "typescript": "^5.1.6"
   },
@@ -51,5 +51,5 @@
   },
   "description": "Congratulations, you have now installed the Sanity Content Studio, an open-source real-time content editing environment connected to the Sanity backend.",
   "author": "",
-  "type": "module"
+  "type": "commonjs"
 }

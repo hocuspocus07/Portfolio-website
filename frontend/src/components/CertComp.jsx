@@ -13,7 +13,6 @@ function CertComp() {
             .then((data) => {
                 setCertificates(data);
                 setFilteredCertificates(data);
-                console.log(data);
             })
             .catch((error) => console.error("Error:", error));
     }, []);
@@ -31,10 +30,15 @@ function CertComp() {
     };
 
     return (
-        <div className='text-center w-screen text-white'>
-            <h1 className='text-4xl font-bold m-4'>Click on a certificate to view it.</h1>
+        <div className='text-center w-screen text-white min-h-screen py-8'>
+            <h1 className='text-4xl font-bold m-4 font-mono text-green-400'>
+                <span className="text-green-600">[</span>CERTIFICATES<span className="text-green-600">]</span>
+            </h1>
+            <p className="text-gray-400 font-mono mb-8">&gt; Click on a certificate to view it</p>
+            
             <CertFilter onFilterChange={handleFilterChange} />
-            <div className="flex flex-wrap justify-center space-x-4 space-y-4 md:space-x-20 md:space-y-20 ">
+            
+            <div className="flex flex-wrap justify-center gap-6 px-4">
                 {filteredCertificates.map((cert, index) => (
                     <Card key={index} title={cert.title} description={cert.issuedBy} link={cert.pdfUrl} date={cert.dateIssued} />
                 ))}

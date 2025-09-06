@@ -1,40 +1,67 @@
-import React from 'react'
+import { Download, ExternalLink } from "lucide-react"
 
 function Hero() {
-    return (
-        <div id="container" className="flex px-24 justify-center relative w-screen">
-
-            <div id="container" className="p-10 sm:p-16 md:p-10 lg:p-24 xl:p-20 w-auto flex flex-col md:flex-row px-4 sm:px-8 md:px-24 lg:px-24 xl:px-24 relative">
-                <div className="md:mr-10">
-                    <img
-                        className="rounded-lg min-w-[100px] w-80 h-auto md:w-auto md:h-96"
-                        src="pfp.png"
-                        alt="image of myself"
-                    />
-                </div>
-                <div className="w-full sm:w-[70%] md:w-[65%] lg:w-[65%]">
-                    <h1 className="text-white league-bold text-3xl mt-6 mb-8">
-                        SYED SAJJAD HASNAIN
-                    </h1>
-
-                    <p className="text-white w-full sm:w-[35rem] md:w-[50rem] lg:w-[50rem] mb-10">
-                    I am an Electrical Engineering student with a major in Cybersecurity. I enjoy solving CTFs, exploring penetration testing, cryptography, and anything that sharpens my security skills. On the side, I'm learning MERN stack development, building secure and functional web applications. Always curious and eager to learn, I'm constantly exploring new technologies. 
-                    </p>
-
-                    <div id="portfolio" className="flex flex-wrap justify-center items-center gap-4 w-full">
-                        <a rel="noopener" target="_blank" href="resume.pdf" className="bg-gray-800 rounded-lg p-5 w-80 flex items-center gap-2 text-lime-400 justify-center hover:bg-blue-950 hover:scale-110 transition-all duration-300">
-                        <span className='text-xl'><ion-icon name="document-sharp"></ion-icon></span>
-                            <span>Download resume</span>
-                        </a>
-                        <a rel="noopener" target="_blank" href="https://ssajjad-portfolio.netlify.app/" className="bg-gray-800 rounded-lg p-5 w-80 flex items-center gap-1 text-lime-400 justify-center hover:bg-blue-950 hover:scale-110 transition-all duration-300">
-                        <span className='text-xl'><ion-icon name="desktop-sharp"></ion-icon></span>
-                        <span>Windows95 themed portfolio (old)</span>
-                        </a>
-                    </div>
-                </div>
+  return (
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          
+          <div className="flex-shrink-0">
+            <div className="relative group">
+              <img
+                className="rounded-lg w-72 h-72 lg:w-80 lg:h-80 object-cover shadow-2xl border-2 border-green-700/40 group-hover:border-green-400/70 transition-all duration-500"
+                src="pfp.png"
+                alt="Syed Sajjad Hasnain"
+              />
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-tr from-green-500/10 to-green-700/10 pointer-events-none group-hover:opacity-0 transition-opacity duration-500" />
+              <div className="absolute -inset-2 rounded-lg bg-gradient-to-tr from-green-500/30 to-transparent opacity-0 group-hover:opacity-100 blur-md transition-all duration-500 pointer-events-none" />
             </div>
+          </div>
+
+          <div className="flex-1 text-center lg:text-left">
+            <div className="mb-3 font-mono text-green-500 text-sm tracking-[0.2em] uppercase">
+              &gt; WELCOME_TO_MY_PORTFOLIO
+            </div>
+            
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-4 tracking-tight font-mono leading-tight">
+              <span className="text-gray-300">SYED_SAJJAD</span>
+              <span className="block text-green-400 mt-2 drop-shadow-[0_0_8px_#00ff00]">HASNAIN</span>
+            </h1>
+
+            <div className="h-1 w-20 bg-green-500 mb-8 mx-auto lg:mx-0 rounded" />
+
+            <p className="text-lg sm:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed font-mono">
+              &gt; Electrical Engineering student specializing in <span className="text-green-400">Cybersecurity</span>. <br />
+              CTF solver, penetration testing enthusiast, and <span className="text-green-300">MERN stack developer</span>. <br />
+              Continuously exploring the intersection of <span className="text-green-400">hardware</span> and <span className="text-green-300">software security</span>.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a
+                href="resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 bg-green-900/30 hover:bg-green-800/50 text-green-400 hover:text-green-300 px-6 py-3 rounded-lg font-mono border border-green-700/40 hover:border-green-400/50 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,0,0.2)]"
+              >
+                <Download className="w-5 h-5 group-hover:animate-bounce" />
+                <span>[DOWNLOAD_RESUME]</span>
+              </a>
+
+              <a
+                href="https://ssajjad-portfolio.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 bg-black/40 hover:bg-gray-800/60 text-gray-400 hover:text-gray-200 px-6 py-3 rounded-lg font-mono border border-gray-700/40 hover:border-gray-500/50 transition-all duration-300 hover:scale-105"
+              >
+                <ExternalLink className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
+                <span>[LEGACY_PORTFOLIO]</span>
+              </a>
+            </div>
+          </div>
         </div>
-    )
+      </div>
+    </section>
+  )
 }
 
 export default Hero

@@ -26,24 +26,24 @@ export default function ContactComp() {
             });
 
             if (response.ok) {
-                setStatus('Message sent successfully!');
+                setStatus('MESSAGE_SENT_SUCCESSFULLY!');
                 setFormData({ name: '', email: '', message: '' }); 
             } else {
-                setStatus('Failed to send message. Please try again.');
+                setStatus('ERROR: FAILED_TO_SEND_MESSAGE');
             }
         } catch (error) {
             console.error('Error:', error);
-            setStatus('An error occurred. Please try again.');
+            setStatus('ERROR: NETWORK_ISSUE');
         }
     };
 
     return (
-        <div className='w-screen items-center mt-10 sm:mt-4'>
-            <div className="max-w-md mx-auto p-8 bg-gray-900 opacity-75 rounded-md shadow-md form-container">
-                <h2 className="text-2xl font-semibold text-white mb-6">Say Something!</h2>
+        <div className='w-screen items-center mt-10 sm:mt-4 min-h-screen py-12'>
+            <div className="max-w-md mx-auto p-8 bg-black/40 border border-green-700/30 rounded-lg shadow-md form-container backdrop-blur-sm">
+                <h2 className="text-2xl font-mono font-semibold text-green-400 mb-6">&gt; SEND_MESSAGE</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
-                        <label htmlFor="name" className="block text-gray-300 text-sm font-bold mb-2">Your Name</label>
+                        <label htmlFor="name" className="block text-green-500 text-sm font-mono font-bold mb-2">NAME</label>
                         <input
                             type="text"
                             id="name"
@@ -52,11 +52,11 @@ export default function ContactComp() {
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-lime-500 bg-gray-700 text-white"
+                            className="w-full px-3 py-2 border border-green-700/30 rounded-md focus:outline-none focus:border-green-500 bg-black/40 text-green-300 font-mono"
                         />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="email" className="block text-gray-300 text-sm font-bold mb-2">Your Email</label>
+                        <label htmlFor="email" className="block text-green-500 text-sm font-mono font-bold mb-2">EMAIL</label>
                         <input
                             type="email"
                             id="email"
@@ -65,11 +65,11 @@ export default function ContactComp() {
                             value={formData.email}
                             onChange={handleChange}
                             required
-                            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-lime-500 bg-gray-700 text-white"
+                            className="w-full px-3 py-2 border border-green-700/30 rounded-md focus:outline-none focus:border-green-500 bg-black/40 text-green-300 font-mono"
                         />
                     </div>
                     <div className="mb-6">
-                        <label htmlFor="message" className="block text-gray-300 text-sm font-bold mb-2">Your Message</label>
+                        <label htmlFor="message" className="block text-green-500 text-sm font-mono font-bold mb-2">MESSAGE</label>
                         <textarea
                             id="message"
                             name="message"
@@ -78,24 +78,23 @@ export default function ContactComp() {
                             value={formData.message}
                             onChange={handleChange}
                             required
-                            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-lime-500 bg-gray-700 text-white"
+                            className="w-full px-3 py-2 border border-green-700/30 rounded-md focus:outline-none focus:border-green-500 bg-black/40 text-green-300 font-mono"
                         ></textarea>
                     </div>
                     <button
                         type="submit"
-                        className="bg-lime-400 text-white px-4 py-2 rounded-md hover:bg-lime-700 focus:outline-none focus:shadow-outline-blue"
+                        className="bg-green-900/40 text-green-400 px-4 py-2 rounded-md border border-green-700/30 hover:bg-green-800/50 hover:border-green-500/50 transition-all duration-300 font-mono w-full"
                     >
-                        Send Message
+                        SEND_MESSAGE
                     </button>
-                    {status && <p className="mt-4 text-lime-400">{status}</p>}
+                    {status && <p className="mt-4 text-green-400 font-mono text-sm">{status}</p>}
                 </form>
-                <p className="mt-5 text-gray-300">
-                    If you are not a fan of forms, you can email me{" "}
-                    <a
-                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                <p className="mt-5 text-gray-400 font-mono text-sm">
+                    ALTERNATIVELY: <a
+                        className="font-medium text-green-400 hover:text-green-300 underline"
                         href="mailto:sajjadwork101@gmail.com"
                     >
-                        sajjadwork101@gmail.com
+                        SAJJADWORK101@GMAIL.COM
                     </a>
                 </p>
             </div>

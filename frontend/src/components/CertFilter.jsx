@@ -10,8 +10,8 @@ function CertFilter({ onFilterChange }) {
         { name: 'Web Development'},
         { name: 'Hackathon'},
         { name: 'CTF'},
-        {name:'Professional'},
-        {name:'Other'},
+        { name: 'Professional'},
+        { name: 'Other'},
     ];
 
     const handleCategorySelect = (category) => {
@@ -22,11 +22,11 @@ function CertFilter({ onFilterChange }) {
 
     return (
         <div className="flex justify-center items-center my-8">
-            <div className="w-[150px] text-gray-900 dark:text-gray-100">
+            <div className="w-[180px] text-gray-100 font-mono">
                 <div className="relative w-full group">
-                    <label className="text-sm text-lime-500">Category</label>
+                    <label className="text-sm text-green-500">CATEGORY_FILTER</label>
                     <button 
-                        className="py-2.5 px-3 w-full mt-2 md:text-sm text-site border border-dimmed bg-gray-900 text-white focus:border-brand focus:outline-none focus:ring-0 peer flex items-center justify-between rounded font-semibold"
+                        className="py-2.5 px-3 w-full mt-2 text-sm border border-green-700/30 bg-black/40 text-green-400 focus:border-green-500 focus:outline-none focus:ring-0 peer flex items-center justify-between rounded font-semibold hover:border-green-500/50 transition-all duration-300"
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     >
                         {selectedCategory}
@@ -41,12 +41,12 @@ function CertFilter({ onFilterChange }) {
                         </svg>
                     </button>
                     {isDropdownOpen && (
-                        <div className="absolute bg-gray-900 text-white z-[99] top-[100%] left-[50%] translate-x-[-50%] rounded-md overflow-hidden shadow-lg min-w-[200px] w-max p-1 border border-dimmed text-xs md:text-sm">
+                        <div className="absolute bg-black/90 border border-green-700/30 text-green-400 z-[99] top-[100%] left-[50%] translate-x-[-50%] rounded-md overflow-hidden shadow-lg min-w-[200px] w-max p-1 text-sm mt-1 backdrop-blur-sm">
                             {categories.map((category, index) => (
                                 <div
                                     key={index}
-                                    className={`w-full block cursor-pointer hover:bg-gray-400 hover:text-black dark:hover:bg-gray-900 px-3 py-2 rounded-md ${
-                                        selectedCategory === category.name ? 'bg-white text-black dark:bg-gray-900 text-link' : ''
+                                    className={`w-full block cursor-pointer hover:bg-green-900/30 px-3 py-2 rounded-md font-mono ${
+                                        selectedCategory === category.name ? 'bg-green-900/40 text-green-300' : ''
                                     }`}
                                     onClick={() => handleCategorySelect(category.name)}
                                 >

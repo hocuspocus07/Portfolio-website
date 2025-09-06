@@ -1,81 +1,80 @@
+import TechStackSection from "./Techstack"
+import ExperienceSection from "./Experience"
+import EducationSection from "./Education"
+
 const AboutMe = () => {
-    const techStack = [
-        { name: "React", img: "/react.png" },
-        { name: "Node.js", img: "/nodejs.jpg" },
-        { name: "Python", img: "/python.jpg" },
-        { name: "C", img: "/c.png" },
-        { name: "C++", img: "/cpp.png" },
-        { name: "Express", img: "/express.png" },
-        { name: "Ghidra", img: "/ghidra.png" },
-        { name: "GitHub", img: "/github.png" },
-        { name: "JavaScript", img: "/js.jpg" },
-        { name: "MongoDB", img: "/mongo.png" },
-        { name: "Sanity", img: "/sanity.png" },
-        { name: "TypeScript", img: "/ts.jpg" },
-        { name: "Burp Suite", img: "/burp.png" },
-        { name: "Wireshark", img: "/wire.jpg" },
-        { name: "Autopsy", img: "/autopsy.jpg" }
-      ];
-  
-    const education = [
-      { degree: "Electrical Engg.", school: "Jamia Millia Islamia", year: "2023-2027" },
-    ];
-  
-    const experience = [
-      { role: "Tech Team", company: "IEEE-JMI", duration: "2024-2025" },
-      { role: "Graphics Team", company: "TRS-JMI", duration: "2023-2025" }
-    ];
-  
-    return (
-      <div className="w-screen mx-auto px-4 py-8">
-        {/* Tech Stack Section */}
-        <section className="mb-12">
-          <h2 className="text-4xl font-bold mb-8 text-center text-white">Tech Stack</h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-            {techStack.map((tech, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className="w-20 h-20 rounded-full bg-white border-2 border-lime-500 shadow-lg p-2 mb-4 overflow-hidden transition-transform hover:scale-105">
-                  <img 
-                    src={tech.img} 
-                    alt={tech.name} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="text-white font-large font-bold">{tech.name.toLocaleUpperCase()}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-  
-        {/* Education Section */}
-        <section className="mb-12">
-          <h2 className="text-4xl font-bold mb-8 text-center text-white">Education</h2>
-          <div className="items-center justify-center flex">
-            {education.map((edu, index) => (
-              <div key={index} className="bg-gray-800 p-6 rounded-lg border-2 border-lime-400 shadow-sm md:w-1/3 lg:w-2/3 w-screen">
-                <h3 className="font-semibold text-lg text-lime-400">{edu.degree}</h3>
-                <p className="text-white">{edu.school}</p>
-                <p className="text-white text-sm mt-2">{edu.year}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-  
-        {/* Experience Section */}
-        <section>
-          <h2 className="text-4xl font-bold mb-8 text-center text-white">Experience</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {experience.map((exp, index) => (
-              <div key={index} className="bg-gray-800 p-6 rounded-lg border-2 border-lime-400 shadow-sm">
-                <h3 className="font-semibold text-lg text-lime-400">{exp.role}</h3>
-                <p className="text-white">{exp.company}</p>
-                <p className="text-white text-sm mt-2">{exp.duration}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+  const techStack = [
+    // 🟢 Languages
+    { name: "Python", img: "/python.png" },
+    { name: "JavaScript", img: "/js.png" },
+    { name: "TypeScript", img: "/ts.png" },
+    { name: "C", img: "/c.png" },
+    { name: "C++", img: "/cpp.png" },
+    { name: "SQL", img: "/sql.png" },
+    {name:"Bash", img:"/bash.png"},
+    {name:"HTML5", img:"/html5.png"},
+    {name:"CSS3", img:"/css3.png"},
+
+    // 🟢 Web Development
+    { name: "React.js", img: "/react.png" },
+    { name: "Node.js", img: "/nodejs.png" },
+    { name: "Express.js", img: "/express.png" },
+    { name: "MongoDB", img: "/mongo.png" },
+    { name: "MySQL", img: "/mysql.png" },
+    {name:"PostgreSQL", img:"/postgresql.png"},
+    { name: "TailwindCSS", img: "/tailwindcss.png" },
+    { name: "Sanity.io", img: "/sanity.png" },
+    {name:"Next.js", img:"/nextjs.png"},
+    {name:"Bootstrap", img:"/bootstrap.png"},
+
+    // 🟢 Cybersecurity Tools
+    { name: "Burp Suite", img: "/burp.png" },
+    { name: "Ghidra", img: "/ghidra.png" },
+    { name: "Metasploit", img: "/metasploit.png" },
+    { name: "Wireshark", img: "/wireshark.png" },
+    { name: "Autopsy", img: "/autopsy.png" },
+    { name: "Linux Security Tools", img: "/linux.png" },
+
+    // 🟢 Frameworks & Libraries
+    { name: "Socket.io", img: "/socket.io.png" },
+    { name: "RESTful APIs", img: "/restful.png" },
+    { name: "Stockfish Engine", img: "/stockfish.png" },
+
+    // 🟢 Dev Tools
+    { name: "GitHub", img: "/github.png" },
+    { name: "Docker", img: "/docker.png" },
+    { name: "Supabase", img: "/supabase.png" },
+    { name: "ShadCN", img: "/shadcn.png" },
+  ]
+
+  const education = [
+  { degree: "B.Tech in Electrical Engineering", school: "Jamia Millia Islamia", year: "2023-2027",
+    metrics: ["GPA: 3.05 / 4", "Relevant coursework: Cybersecurity Fundamentals"] },
+  { degree: "12th Grade (PCM+CS)", school: "JB Academy", year: "2022",
+    metrics: ["94% aggregate", "Distinction in Computer Science"] },
+  { degree: "10th Grade", school: "JB Academy", year: "2020",
+    metrics: ["95.17% aggregate", "Distinction in CS, Math, English", "Participated in football & art competitions"] }
+]
+
+const experience = [
+  { role: "Tech Team Member", company: "IEEE-JMI", duration: "2024-2025",
+    metrics: ["Worked on collaborative tech projects", "Supported events & workshops"] },
+  { role: "Graphics Team Member", company: "TRS-JMI", duration: "2023-2025",
+    metrics: ["Designed event posters & digital assets", "Led visual branding initiatives"] },
+  { role: "Web Development Team Member", company: "The Jamia Review", duration: "2025-Present",
+    metrics: ["Contributed to web development tasks", "Maintained and enhanced digital presence"] }
+]
+
+
+  return (
+    <div className="h-full w-screen flex flex-col items-center justify-center">
+      <div className="max-w-7xl mx-auto px-4 py-20 space-y-16">
+        <TechStackSection techStack={techStack} />
+        <EducationSection education={education} />
+        <ExperienceSection experience={experience} />
       </div>
-    );
-  };
-  
-  export default AboutMe;
+    </div>
+  )
+}
+
+export default AboutMe
